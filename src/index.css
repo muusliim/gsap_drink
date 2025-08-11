@@ -178,11 +178,11 @@ body::-webkit-scrollbar {
         }
 
         .nutrition-text-scroll {
-            @apply rotate-[-3deg] border-[.5vw] border-[#e3d3bc] text-nowrap opacity-0 md:-mt-32 -mt-24;
+            @apply rotate-[-3deg] border-[.5vw] border-[#e3d3bc] text-nowrap opacity-0 md:-mt-32 -mt-26;
         }
 
         .nutrition-box {
-            @apply absolute md:bottom-16 bottom-5 w-full md:px-0 px-5;
+            @apply absolute md:bottom-16 bottom-5 left-0 w-full md:px-0 px-5;
 
             .list-wrapper {
                 @apply bg-[#fdebd2] rounded-full border-[.5vw] border-[#e8ddca] mx-auto max-w-7xl md:py-8 py-5 md:px-0 px-5 flex justify-between items-center;

@@ -1,13 +1,14 @@
 import { useEffect, useRef } from "react";
+//gsap, lenis
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 import { ReactLenis } from "lenis/react";
-
+//sections
 import { Navbar } from "./components/Navbar";
 import { HeroSection } from "./sections/HeroSection";
 import { MessageSection } from "./sections/MessageSection";
 import { FlavorSection } from "./sections/FlavorSection";
+import { NutritionSection } from "./sections/NutritionSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,10 +30,10 @@ export default function App() {
 
 			<main>
 				<Navbar />
-
 				<HeroSection />
 				<MessageSection />
 				<FlavorSection />
+				<NutritionSection />
 			</main>
 		</>
 	);
