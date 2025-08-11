@@ -1,9 +1,6 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitText from "gsap/SplitText";
-
-gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export const MessageSection = () => {
 	useGSAP(() => {
@@ -21,8 +18,8 @@ export const MessageSection = () => {
 		const tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: ".message-content",
-				start: "10% center",
-				end: "90% top",
+				start: "20% center",
+				end: "90% 20%",
 				scrub: 0.2,
 			},
 		});

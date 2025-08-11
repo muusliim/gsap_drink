@@ -1,43 +1,43 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import SplitText from "gsap/SplitText";
-import ScrollTrigger from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(SplitText, ScrollTrigger);
-export function HeroSection() {
+gsap.registerPlugin(SplitText);
+export const HeroSection = () => {
 	useGSAP(() => {
-		const split = new SplitText(".hero-title", {
+		SplitText.create(".hero-title", {
 			type: "chars",
 			charsClass: "hero-title-char++",
-		});
+			onSplit: (self) => {
+				const tl = gsap.timeline({
+					delay: 1,
+				});
 
-		const tl = gsap.timeline({
-			delay: 1,
+				tl.to(".hero-content", {
+					opacity: 1,
+					ease: "power2.inOut",
+				})
+					.to(
+						".hero-text-scroll",
+						{
+							duration: 1,
+							clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+							ease: "circ.out",
+						},
+						"<+0.4"
+					)
+					.from(
+						self.chars,
+						{
+							yPercent: 200,
+							duration: 0.5,
+							ease: "power2.out",
+							stagger: 0.05,
+						},
+						"<-0.3"
+					);
+			},
 		});
-
-		tl.to(".hero-content", {
-			opacity: 1,
-			ease: "power2.inOut",
-		})
-			.to(
-				".hero-text-scroll",
-				{
-					duration: 1,
-					clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-					ease: "circ.out",
-				},
-				"<+0.4"
-			)
-			.from(
-				split.chars,
-				{
-					yPercent: 200,
-					duration: 0.5,
-					ease: "power2.out",
-					stagger: 0.05,
-				},
-				"<-0.3"
-			);
 
 		const heroTl = gsap.timeline({
 			scrollTrigger: {
@@ -83,11 +83,11 @@ export function HeroSection() {
 						your inner kid with every deliciously smooth chug.
 					</h3>
 
-					<button className="hero-button">
+					<button className="hero-button hover:-rotate-3 transition-transform duration-300">
 						<p>Chug a SPYLT</p>
 					</button>
 				</div>
 			</div>
 		</section>
 	);
-}
+};
