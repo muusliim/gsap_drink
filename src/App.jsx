@@ -5,10 +5,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ReactLenis } from "lenis/react";
 //sections
 import { Navbar } from "./components/Navbar";
-import { HeroSection } from "./sections/HeroSection";
-import { MessageSection } from "./sections/MessageSection";
-import { FlavorSection } from "./sections/FlavorSection";
-import { NutritionSection } from "./sections/NutritionSection";
+import {
+	HeroSection,
+	MessageSection,
+	FlavorSection,
+	NutritionSection,
+	BenefitSection,
+	TestimonialSection,
+} from "./sections";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,6 +38,8 @@ export default function App() {
 				<MessageSection />
 				<FlavorSection />
 				<NutritionSection />
+				<BenefitSection />
+				<TestimonialSection />
 			</main>
 		</>
 	);

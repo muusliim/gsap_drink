@@ -8,7 +8,6 @@ export const FlavorSlider = () => {
 	const isTablet = useMediaQuery({ query: "(max-width: 1023px)" });
 	const sliderRef = useRef(null);
 	useGSAP(() => {
-
 		if (!isTablet) {
 			const tl = gsap.timeline({
 				scrollTrigger: {
