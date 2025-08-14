@@ -12,6 +12,7 @@ import {
 	NutritionSection,
 	BenefitSection,
 	TestimonialSection,
+	FooterSection,
 } from "./sections";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -40,6 +41,7 @@ export default function App() {
 				<NutritionSection />
 				<BenefitSection />
 				<TestimonialSection />
+				<FooterSection />
 			</main>
 		</>
 	);

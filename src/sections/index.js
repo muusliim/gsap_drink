@@ -4,3 +4,4 @@ export { FlavorSection } from "./FlavorSection";
 export { NutritionSection } from "./NutritionSection";
 export { BenefitSection } from "./BenefitSection";
 export { TestimonialSection } from "./TestimonialSection";
+export { FooterSection } from "./FooterSection";

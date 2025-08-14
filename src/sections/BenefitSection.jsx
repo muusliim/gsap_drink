@@ -9,8 +9,8 @@ export const BenefitSection = () => {
 			delay: 1,
 			scrollTrigger: {
 				trigger: ".benefit-section",
-				start: "10% 60%",
-				end: "20% top",
+				start: "top 60%",
+				end: "10% top",
 				scrub: 1.5,
 			},
 		});
@@ -81,7 +81,6 @@ export const BenefitSection = () => {
 					</div>
 				</div>
 			</div>
-
 			<div className="relative overlay-box">
 				<VideoPinSection />
 			</div>

@@ -45,9 +45,9 @@ export const NutritionSection = () => {
 				yPercent: 300,
 				rotate: 30,
 				ease: "power2.inOut",
-				duration: 1,
+				duration: 0.3,
 				stagger: 0.01,
-			});
+			}, "<+0.3");
 
 		const titleTl = gsap.timeline({
 			scrollTrigger: {

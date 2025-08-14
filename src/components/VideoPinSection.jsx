@@ -1,33 +1,27 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useMediaQuery } from "react-responsive";
 
 export const VideoPinSection = () => {
-	const isMobile = useMediaQuery({
-		query: "(max-width: 768px)",
-	});
 	useGSAP(() => {
-		if (!isMobile) {
-			const tl = gsap.timeline({
-				scrollTrigger: {
-					trigger: ".vd-pin-section",
-					start: "-15% top",
-					end: "100% top",
-					scrub: 1.5,
-					pin: true,
-				},
-			});
+		const tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".vd-pin-section",
+				start: "top top",
+				end: "+=250%",
+				scrub: 1.5,
+				pin: true,
+			},
+		});
 
-			tl.to(".video-box", {
-				clipPath: "circle(100% at 50% 50%)",
-				ease: "power2.inOut",
-			});
-		}
+		tl.to(".video-box", {
+			clipPath: "circle(100% at 50% 50%)",
+			ease: "power2.inOut",
+		});
 	});
 	return (
 		<section className="vd-pin-section">
 			<div
-				style={{ clipPath: isMobile ? "" : "circle(6% at 50% 50%)" }}
+				style={{ clipPath: "circle(5% at 50% 50%)" }}
 				className="size-full video-box"
 			>
 				<video src="/videos/pin-video.mp4" playsInline muted loop autoPlay />
